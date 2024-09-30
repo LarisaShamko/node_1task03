@@ -1,0 +1,35 @@
+console.log("Welcome to 1.0.0 version!")
+
+/function countOPN(expression) {
+    const numbers = [];
+    const elements = expression.split(' ');
+    elements.forEach(element => {
+        if (!isNaN(element)) {
+            // если число, добавляем его в массив
+            numbers.push(parseInt(element, 10));
+        } else {
+            // если оператор, то выполняем операцию
+            const b = numbers.pop();
+            const a = numbers.pop();
+
+            switch (element) {
+                case '+':
+                    numbers.push(a + b);
+                    break;
+                case '-':
+                    numbers.push(a - b);
+                    break;
+                case '*':
+                    numbers.push(a * b);
+                    break;
+                case '/':
+                    numbers.push(Math.trunc(a / b));  // Целочисленное деление
+                    break;
+            }
+        }
+    });
+
+    return numbers[0];
+};
+
+module.exports = countOPN;

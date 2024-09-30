@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@larisashamko/node_1": "github:larisashamko/node_1"
+  }
+}
